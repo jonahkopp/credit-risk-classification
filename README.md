@@ -22,15 +22,20 @@ We looked at the balanced accuracy score, confusion matrix, and precision and re
   * Balanced accuracy was 95%. The accuracy was slightly higher on healthy loans and slightly lower on high-risk loans.
   * The confusion matrix (printed below) shows us that there are extremely low rates of false positives (that is, a loan that was predicted to be healthy but was in fact low risk). This rate is 0.5%.
   * The false negative rate is much higher, at 9%. This means that we would have assessed these loans as high-risk when in fact they were healthy.
-  * The precision of the model on healthy loans is 99.5%. This is the proportion of healthy loan predictions that were in fact healthy loans.
-  * The recall of the model on healthy loans was also over 99%. THis means that over 99% of healthy loans were correctly identified as healthy loans.
+  * The precision of the model on healthy loans is 99.7%. This is the proportion of healthy loan predictions that were in fact healthy loans.
+  * The recall of the model on healthy loans is 99.5%. THis means that 99.5% of healthy loans were correctly identified as healthy loans.
+  * The precision and recall of the high-risk loans is slightly worse, at 84.7% and 91.0% respectively. This demonstrates that the model is not as accurate when it comes to these loans.
 
+
+Confusion Matrix:
+| Prediction / Actual | Healthy | High-Risk |
+| -------- | ------- | ------- |
+| Healthy | 18663  | 102    |
+| High-Risk | 56 | 563     |
 
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+Overall the model has very high accuracy. To determine if it is suitable to use, we need to know the business impact of following it's recommendations. For example, we need to know how much money we stand to lose from loans that are high-risk but are incorrectly labeled as healthy, because this will happen. Perhaps we should look at the false predictions and see if they are larger or smaller loans than average, as that would give us a way to size the risk.
 
-If you do not recommend any of the models, please justify your reasoning.
+But overall, as a way to estimate which loans will be healthy and which will be high risk, this is a great model.
